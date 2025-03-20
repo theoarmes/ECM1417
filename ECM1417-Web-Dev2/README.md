@@ -30,17 +30,17 @@
   - Updates high score dynamically and stores it in **localStorage**.
   - Changes **background to gold (#FFD700)** if a high score is beaten.
 - Allows players to **submit scores or replay**.
-- Includes **game animations** (flipping effect).
+- Includes **game animations** (flipping and hover).
 
 ### **4. Leaderboard Page (leaderboard.php)**
 - Displays **top scores**.
 - Uses a structured **table layout**:
-  - **Grey background with 5px box shadow**.
+  - **Grey background**.
   - **Table headers are blue with 2px spacing**.
 
 ## Deployment & Access
 - Hosted on **Microsoft Azure VM** with a configured **LAMP stack**.
-- Accessible via the provided **VM link**.
+- Accessible via the provided **"http://ml-lab-4d78f073-aa49-4f0e-bce2-31e5254052c7.ukwest.cloudapp.azure.com:58061/ECM1417-Web-Dev2/public_html/pairs.php"**.
 
 ## Notes
 - The leaderboard persists across different users by handling **multiple browser sessions**.
