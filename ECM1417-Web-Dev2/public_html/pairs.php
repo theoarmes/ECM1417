@@ -32,8 +32,13 @@ $bestScore = $_COOKIE['best_score'] ?? PHP_INT_MAX;
             <option value="medium">Medium</option>
             <option value="complex">Complex</option>
         </select>
-        <p id="timer">Time: 0s</p>
-        <div id="game-board"></div>
+        <div id="game-container"></div>
+            <div id="game-board"></div>
+            <div id="status-bar">
+                <span id="timer">Time: 0s</span>
+                <span id="score-counter">Points: 0</span>
+            </div>
+        </div>
         <form id="score-form" action="leaderboard.php" method="POST" style="display: none;">
             <input type="hidden" name="username" id="username"
                 value="<?php echo htmlspecialchars($_SESSION['username'] ?? 'Guest'); ?>">

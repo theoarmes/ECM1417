@@ -4,22 +4,51 @@
 body {
     font-family: Verdana, sans-serif;
     background-color: #f4f4f4;
+    background: url('../images/arcade-unsplash.jpg') center/cover no-repeat fixed;
     margin: 0;
     padding: 0;
     text-align: center;
 }
 
 /* Navbar */
+
 nav {
     background: blue;
     color: white;
-    padding: 10px;
+    padding: 15px;
     display: flex;
     justify-content: space-between;
     align-items: center;
     font-size: 12px;
     font-weight: bold;
 }
+
+nav .left {
+    margin-right: auto;
+}
+nav .right {
+    margin-left: auto;
+}
+nav .center {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+/* Styling for avatar parts */
+.emoji {
+    width: 60px;
+    height: 60px;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+.emoji img {
+    position: absolute;
+    width: 100%;
+}
+
 nav a {
     color: white;
     text-decoration: none;
@@ -35,7 +64,7 @@ nav img {
     max-width: 800px;
     margin: 50px auto;
     padding: 20px;
-    background: url('../images/arcade-unsplash.jpg') center/cover no-repeat;
+    background-color: gray;
     border-radius: 10px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
@@ -70,15 +99,52 @@ button:hover {
 /* Game Board */
 #game-board {
     display: grid;
+    background: gray;
     grid-template-columns: repeat(auto-fit, minmax(100px, 1fr)); /* Responsive layout */
     gap: 10px;
     justify-content: center;
+    box-shadow: 0 4px 8px rgba(white);
     margin-top: 20px;
 }
+#game-result {
+    background: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+    text-align: center;
+    margin-top: 20px;
+}
+
+
+#status-bar {
+    display: none;
+    justify-content: space-between;
+    width: 200px;
+    margin: 10px auto;
+    color: white;
+    font-size: 18px;
+    font-weight: bold;
+}
+#timer {
+    font-size: 20px;
+    font-weight: bold;
+    color: white;
+    text-shadow: 2px 2px 5px rgba(255, 255, 255, 0.8);
+}
+
+
+#score-counter {
+    font-size: 18px;
+    font-weight: bold;
+    color: white;
+    text-shadow: 2px 2px 5px rgba(255, 255, 255, 0.8);
+    margin-right: 20px; /* Align to right */
+}
+
 .card {
     width: 100px;
     height: 100px;
-    background: gray;
+    background: white;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -86,24 +152,90 @@ button:hover {
     color: white;
     border-radius: 5px;
     cursor: pointer;
+    transform-style: preserve-3d;
+    
+    transition: transform 0.6s;
 }
+
+.card:hover {
+    transform: scale(1.1);
+    transition: transform 0.2s ease-in-out;
+}
+
 .card.flipped {
     background: white;
     color: black;
+    transform: rotateY(180deg);
     border: 2px solid blue;
 }
 
+.emoji {
+    position: relative;
+    width: 60px;
+    height: 60px;
+}
+.emoji img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+}
+
+/* Avatar Preview */
+#avatar-preview {
+    position: relative;
+    width: 80px;
+    height: 80px;
+    margin: 20px auto;
+}
+
+.emoji img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+}
+
+/* Button Styling */
+button {
+    display: block;
+    margin: 10px auto;
+    width: 50%;
+    padding: 10px;
+}
+
+
+
+
 /* Leaderboard */
+#leaderboard {
+    background: gray;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 10px 15px rgba(0, 0, 0, 0.5);
+    width: 80%;
+    margin: 20px auto;
+}
+
 table {
     width: 100%;
-    border-collapse: collapse;
-    margin-top: 20px;
+    border-spacing: 2px;
+    background: gray;
+    border-radius: 5px;
+    box-shadow: white;
 }
-th, td {
-    padding: 10px;
-    border: 1px solid black;
-}
+
 th {
     background: blue;
-    color: white;
+    color: gray;
+    padding: 10px;
+    box-shadow: white;
 }
+
+td {
+    padding: 10px;
+    border: 1px solid black;
+    box-shadow: white;
+}
+
+
