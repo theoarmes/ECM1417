@@ -1,18 +1,8 @@
 <?php
-if (session_status() == PHP_SESSION_NONE) {
+if (session_status() === PHP_SESSION_NONE) {
     session_start();
 }
-
-if (isset($_GET['reset'])) {
-    session_destroy();
-    setcookie("username", "", time() - 3600, "/");
-    setcookie("avatar", "", time() - 3600, "/");
-    header("Location: index.php");
-    exit();
-}
 ?>
-
-<a href="index.php?reset=true">Reset Session</a>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -66,12 +56,6 @@ if (isset($_GET['reset'])) {
     <div class="container">
         <?php if (isset($_SESSION['username'])): ?>
             <h1>Welcome to Pairs, <?php echo htmlspecialchars($_SESSION['username']); ?>!</h1>
-
-            <?php if (isset($_SESSION['avatar'])): ?>
-                <div class="profile-photo">
-                    <img src="<?php echo htmlspecialchars($_SESSION['avatar']); ?>" alt="Profile Avatar">
-                </div>
-            <?php endif; ?>
             <a href="pairs.php" class="btn">Click here to play</a>
         <?php else: ?>
             <h1>You're not using a registered session?</h1>

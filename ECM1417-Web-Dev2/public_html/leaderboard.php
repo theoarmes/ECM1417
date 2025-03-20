@@ -26,6 +26,7 @@ $scores = $_SESSION['scores'] ?? [];
 <head>
     <meta charset="UTF-8">
     <title>Leaderboard</title>
+    <link rel="stylesheet" href="assets\css\style.css">
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -53,7 +54,7 @@ $scores = $_SESSION['scores'] ?? [];
 </head>
 
 <body>
-
+    <?php include 'includes/navbar.php'; ?>
     <h1>Leaderboard</h1>
     <table>
         <tr>
