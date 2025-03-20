@@ -10,10 +10,14 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
 
 
-    // Force correct file extensions
-    if (!str_ends_with($skin, '.png')) $skin .= '.png';
-    if (!str_ends_with($eyes, '.png')) $eyes .= '.png';
-    if (!str_ends_with($mouth, '.png')) $mouth .= '.png';
+    function endsWith($string, $ending) {
+        return substr($string, -strlen($ending)) === $ending;
+    }
+    
+    if (!endsWith($skin, '.png')) $skin .= '.png';
+    if (!endsWith($eyes, '.png')) $eyes .= '.png';
+    if (!endsWith($mouth, '.png')) $mouth .= '.png';
+    
 
     // Store avatar in session
     $_SESSION["username"] = $username;
